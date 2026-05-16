@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şiir Defteri</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Şiir Defteri</h1>
+        
+        <p>Senin için dökülen kelimeler...</p>
+
+        <ul id="siir-listesi" class="poem-list">
+        </ul>
+        
+
+        
+        <div id="secili-siir"></div>
+
+        <section class="extra">
+            <button id="surprise-btn">İlk Kelimeler✨</button>
+        <div id="hidden-message" class="hidden">
+            <p>Bana güneş olur musun istesem<br>Çevremi saran şu karanlık perdeden<br>❤️❤️❤️❤️</p>
+        </div>
+    </section>
+
+        <div style="margin-top: 30px;">
+            <a href="index.html" class="back-button">← Ana Sayfaya Dön</a>
+        
+        </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="script.js"></script>
+
+    <div id="admin-panel-link" onclick="adminPaneliGoster()" style="position: fixed; bottom: 10px; right: 10px; width: 20px; height: 20px; cursor: pointer; opacity: 0.3;">✨</div>
+
+    <div id="admin-modal" class="hidden" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border-radius: 15px; box-shadow: 0 0 15px rgba(0,0,0,0.2); z-index: 10000; width: 90%; max-width: 400px; display: none;">
+        <h3 style="color: #d81b60; margin-top: 0;">Yeni Şiir Ekle</h3>
+        <input type="password" id="admin-sifre" placeholder="Giriş Şifresi" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 8px;">
+        <input type="text" id="yeni-baslik" placeholder="Şiir Başlığı" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 8px;">
+        <textarea id="yeni-icerik" placeholder="Şiir İçeriği..." rows="6" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 8px; font-family: sans-serif;"></textarea>
+        
+        <div style="text-align: right;">
+            <button onclick="adminPaneliKapat()" style="background: #eee; border: none; padding: 8px 15px; border-radius: 8px; margin-right: 5px; cursor: pointer;">İptal</button>
+            <button onclick="siirKaydetSupabase()" style="background: #f06292; color: white; border: none; padding: 8px 15px; border-radius: 8px; cursor: pointer; font-weight: bold;">Gönder</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #fff9c4 0%, #fce4ec 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5d4037;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 35px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(240, 98, 146, 0.15);
+    max-width: 500px;
+    width: 90%;
+    border: 3px solid #f06292;
+    margin: 20px;
+}
+
+h1 { color: #d81b60; margin-bottom: 10px; }
+h2 { color: #ec407a; margin-top: 25px; }
+
+#love-counter {
+    background: #fffde7;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #fbc02d;
+    margin: 20px 0;
+    border: 1px dashed #fbc02d;
+}
+/*
+.poem-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+*/
+.poem-link {
+    text-decoration: none;
+    color: #ad1457;
+    font-weight: bold;
+    padding: 12px 25px;
+    border: 2px solid #f48fb1;
+    border-radius: 50px;
+    transition: 0.3s;
+    background: white;
+    display: inline-block;
+}
+
+.poem-link:hover {
+    background: #f48fb1;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.back-button {
+    text-decoration: none;
+    color: #d81b60;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.back-button:hover {
+    border-bottom: 2px solid #d81b60;
+}
+
+.poem-content {
+    white-space: pre-line;
+    line-height: 1.8;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #4a4a4a;
+    margin: 25px 0;
+}
+
+#surprise-btn {
+    background: #f06292;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* Şiir butonlarının listelendiği ana kutu */
+.poem-list {
+    display: flex;
+    flex-wrap: wrap;         /* Sığmayan butonlar alt satıra geçsin */
+    justify-content: center; /* Butonları ortala */
+    gap: 15px;               /* Butonların arasındaki boşluk */
+    padding: 0;
+    list-style: none;
+    max-width: 600px;        /* Sayfada çok yayılmasın diye sınır koyduk */
+    margin: 20px auto;       /* Listeyi sayfada ortala */
+}
+
+/* Her bir liste elemanı (li) */
+.poem-list li {
+    /* Her satırda tam 3 tane durması için (Yarıçap ve boşluklar düşünülerek hesaplandı) */
+    width: calc(33.33% - 10px); 
+    min-width: 120px;        /* Telefonlarda çok küçülüp yazı taşmasın diye */
+    box-sizing: border-box;
+}
+
+/* Oval butonların kendi stili */
+.poem-btn {
+    width: 100%;             /* İçinde bulunduğu 'li' elementini tamamen kaplasın */
+    background: white;
+    border: 2px solid #f06292;
+    color: #d81b60;
+    padding: 12px 10px;      /* İç boşluk */
+    border-radius: 50px;     /* Tam oval görüntü */
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase; /* Harfleri görseldeki gibi büyük yapar */
+    transition: all 0.3s ease;
+    white-space: nowrap;     /* Buton içindeki yazı alt satıra kaymasın */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Eğer şiir adı çok uzunsa taşmasın, üç nokta koysun */
+}
+
+/* Üzerine gelince renk değiştirme */
+.poem-btn:hover {
+    background: #f06292;
+    color: white;
+}
+
+.hidden { display: none; margin-top: 15px; font-weight: bold; color: #d81b60; }
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        width: 95%;
+    }
+    .poem-link {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+    #love-counter {
+        font-size: 1.1rem;
+    }
+}
